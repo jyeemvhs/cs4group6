@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game</title>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+        .span {
+            /*font-style: ;*/
+            font-weight: 700;
+        }
+        body {
+          background-color:#b2a4b7;
+          background-repeat: no-repeat;
+          background-size:cover;
+        }
+        #select {
+           font-weight: 700;
+           font-size: 25px;
+        }
+        table, th, td {
+          border: 2px solid black;
+          table-layout: fixed;
+          width: 55px;
+          height: 55px;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 15%;
+          margin-bottom: auto;
+          text-align:center
+        }
+        table{
+          background-color: #FFFFFF;
+          border:4px solid black;
+        }
+        .floatRight {
+          float: right;
+        }
+        /*select, input{
+          width:50px;
+          height:25px;
+          font-size: 20px;
+        }*/
+        .vertical-center{
+          display:flex;
+          justify-content:center;
+          align-items:center;
+        }
+        .floatRight {
+          float: right;
+        }
+        #notes {
+          /*right:0;*/
+          border:2px solid black;
+          position: absolute;
+          background-image: url(../images/noteswindow.png);
+          z-index:2;
+          visibility: hidden;
+        }
+        #notesHeading {
+          cursor: move;
+          z-index:4;
+        }
+        #textarea{
+          position: relative;
+          background-color: #ede6df;
+          margin: 10px 10px 10px 10px; height: 90%;
+          z-index:3;
+        }
+        
+
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  </head>
+
+  
+
+  <body>
+    
+    <img src="../images/back.png" alt="back a page" width="10%" height="10%" onclick="document.location='home'" style = "margin-left: auto; margin-right: 100%;">
+
+     <div id="notes">
+        <p id="notesHeading">Notes</p>
+        <img src="../images/x.png" class = "floatRight" alt="x icon" width="30" height="20" onclick="closeNotes()">
+        <img src="../images/resize.png" class = "floatRight" alt="resize icon" width="30" height="20" onclick="minimize()">
+        <br>
+        <textarea  id="textarea" name="notes" cols="40" rows="10"></textarea>
+        <br>
+        <input id="save" type="submit" value="Save" class="floatRight" onclick="saveNotes()">
+      </div>
+
+      <img src="../images/help.png" class="floatRight" alt="help icon" width="50" height="50" onclick="help()">
+      <img src="../images/notepad.png" class="floatRight" alt="notepad icon" width="50" height="50" onclick="openNotes()">
+      <br>
+
+
+      <h1 style = " text-align:center">Sudoku Game</h1>
+      <h3 style = " text-align:center">Find a clue after cracking the code...</h3>
+
+      <div id = "select">
+        <label for="options">Choose a square:</label>
+
+        <select name="options" id="options">
+          <option value="A1b">Ab</option>
+          <option value="A2c">Ac</option>
+          <option value="A2d">Ad</option>
+          <option value="B1a">Ba</option>
+          <option value="B1b">Bb</option>
+          <option value="B2c">Bc</option>
+          <option value="C3a">Ca</option>
+          <option value="C3b">Cb</option>
+          <option value="D4c">Dc</option>
+          <option value="D4d">Dd</option>
+        </select>
+        <label for="number">Number input:</label>
+        <input id="number" type="number" name="number" value="" min="1"max="4">
+        <button onclick="DoStuff()">select</button>
+
+        <div class="floatRight">
+        <img id="heart1" src="../images/heart.png" alt="mistakes" width="40" height="40" style="visibility:visible;">
+        <img id="heart2" src="../images/heart.png" alt="mistakes" width="40" height="40" style="visibility:visible;">
+        <img id="heart3" src="../images/heart.png" alt="mistakes" width="40" height="40" style="visibility:visible;">
+        </div>
+
+      </div>
+
+      <div id="error"></div>
+      <h1 style = " text-align:center" id="won"></h1>
+
+      <table id="theTable">
+        <tr>
+          <th></th>
+          <th>a</th>
+          <th>b</th>
+          <th>c</th>
+          <th>d</th>
+        </tr>
+         <tr>
+          <td>A</td>
+          <td id ="A1a" class="span" value ="4">4</td>
+          <td id ="A1b"></td>
+          <td id ="A2c"></td>
+          <td id ="A2d"></td>
+        </tr>
+        <tr>
+          <td>B</td>
+          <td id ="B1a"></td>
+          <td id ="B1b"></td>
+          <td id ="B2c"></td>
+          <td id ="B2d" class="span" value ="4">4</td>
+        </tr>
+        <tr>
+          <td>C</td>
+          <td id ="C3a"></td>
+          <td id ="C3b"></td>
+          <td id ="C4c" class="span" value ="2">2</td>
+          <td id ="C4d" class="span" value ="3">3</td>
+        </tr>
+        <tr>
+          <td>D</td>
+          <td id ="D3a" class="span" value ="2">2</td>
+          <td id ="D3b" class="span" value ="3">3</td>
+          <td id ="D4c"></td>
+          <td id ="D4d"></td>
+        </tr>
+      </table>
+
+      
+      <script src="/js/game.js"></script>
+      <script src="../js/help.js"></script>
+      <script src="js/session.js"></script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+

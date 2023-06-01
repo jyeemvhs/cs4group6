@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mail</title>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js">
+    </script>
+  </head>
+
+  <body>
+    <style type="text/css">
+        body {
+          background-image: url(../images/flowers.png);
+          background-size: 100% 100%;
+          background-color:#bce2da;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+        }
+        h1 {
+          font-size: 60px;
+          font-family: Brush Script MT;
+          color: red;
+          text-align:center;
+        }
+        .mes {
+          font-size: 16px;
+          font-weight:bold;
+          font-family: Verdana;
+        }
+        .secret {
+          font-size: 12px;
+          font-weight:bold;
+          font-family: Verdana;
+          color: rgb(187,226,218);
+        }
+        .text {
+          font-size: 20px;
+          font-family: Verdana;
+          width: 40%;
+          background-image: url(../images/textBox.png);
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          padding: 20px;
+          display: none;
+        }
+        .textTime {
+          font-size: 12px;
+          font-weight:bold;
+          font-family: Verdana;
+          padding-left: 10px;
+          float: left;
+        }
+        .center {
+          margin: auto;
+          width: 30%;
+          background-image: url(../images/mail2.png);
+          background-size: 100% 100%;
+          padding: 10px;
+        }
+        .mail:hover{
+          background-color:#fd5643;
+          position:relative;
+          z-index:5;
+        }
+
+    </style>
+      <img src="../images/back.png" alt="back a page" width="10%" height="10%" onclick="document.location='home'" style = "float:left;">
+
+      <div class="center">
+        <h1> Mail! </h1>
+      </div>
+
+      <img style="float:right;" src="../images/Mailbox.png" alt="Mailbox" width="600" height="600" usemap="#mail">
+        <map name="mail">
+          <area shape="poly" coords="180,253,314,249,359,378,359,414,269,428,228,422" alt="letterONE" onclick= "displayMessage(1)">
+
+          <area shape="poly" coords="161,256,180,253,231,425,189,420" alt="letterONE" onclick= "displayMessage(2)">
+
+          <area shape="poly" coords="196,425,349,441,199,490,18,471" alt="letterONE" onclick= "displayMessage(3)">
+        </map>
+      <h2> You have three new messages! Click on one of the letters in the mail box to read one!</h2>
+      
+      <h2>Previous Messages:</h2>
+
+        <img id="mail1" class="mail" src="../images/mail2.png" alt="OH NO" width="100" height="100" onclick= "displayMessage(4)">
+        <img id="mail2" class="mail" src="../images/mail2.png" alt="OH NO" width="100" height="100" onclick= "displayMessage(5)">
+
+    
+      <p id="msg1" class="mes" style="display:block;">There's nothing to show here *o*</p> 
+      <p id="msg2" class="mes"></p>
+      <p id="msg3" class="mes"></p> 
+        <p id="msg3t" class="textTime"></p> <p id="Let" class="secret"></p>
+          <p id="msg4" class="text"></p>
+        <p id="msg4t" class="textTime"></p>
+          <p id="msg5" class="text"></p>
+        <p id="msg5t" class="textTime"></p>
+          <p id="msg6" class="text"></p>        
+        <p id="msg6t" class="textTime"></p>
+          <p id="msg7" class="text"></p>
+        <p id="msg7t" class="textTime"></p>
+          <p id="msg8" class="text"></p>
+        <p id="msg8t" class="textTime"></p>
+          <p id="msg9" class="text"></p>
+        <p id="msg9t" class="textTime"></p>
+          <p id="msg10" class="text"></p>
+        <p id="msg10t" class="textTime"></p>
+          <p id="msg11" class="text"></p>
+        <p id="msg11t" class="textTime"></p>
+          <p id="msg12" class="text"></p>
+        <p id="msg12t" class="textTime"></p>
+          <p id="msg13" class="text"></p>
+        <p id="msg13t" class="textTime"></p>
+          <p id="msg14" class="text"></p>
+        <p id="msg14t" class="textTime"></p>
+          <p id="msg15" class="text"></p>
+        <p id="msg15t" class="textTime"></p>
+          <p id="msg16" class="text"></p>
+        <p id="msg16t" class="textTime"></p>
+          <p id="msg17" class="text"></p>
+        <p id="msg17t" class="textTime"></p>
+          <p id="msg18" class="text"></p>
+        <p id="msg18t" class="textTime"></p>
+          <p id="msg19" class="text"></p>
+        <p id="msg19t" class="textTime"></p>
+          <p id="msg20" class="text"></p>
+        <p id="msg20t" class="textTime"></p>
+          <p id="msg21" class="text"></p>
+        <p id="msg21t" class="textTime"></p>
+          <p id="msg22" class="text"></p>
+        <p id="msg22t" class="textTime"></p>
+          <p id="msg23" class="text"></p>
+        <p id="msg23t" class="textTime"></p>
+          <p id="msg24" class="text"></p>
+        <p id="msg24t" class="textTime"></p>
+          <p id="msg25" class="text"></p>
+        <p id="msg25t" class="textTime"></p>
+          <p id="msg26" class="text"></p>
+        <p id="msg26t" class="textTime"></p>
+          <p id="msg27" class="text"></p>
+        <p id="msg27t" class="textTime"></p>
+          <p id="msg28" class="text"></p>
+        <p id="msg28t" class="textTime"></p>
+          <p id="msg29" class="text"></p>
+        <p id="msg29t" class="textTime"></p>
+          <p id="msg30" class="text"></p>
+
+
+
+      
+      <script src="../js/mail.js">
+      </script>
+      <script src="js/session.js"></script>
+  </body>
+
+  
+</html>

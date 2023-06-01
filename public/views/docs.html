@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Docs</title>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+        span {
+            font-style: italic;
+        }
+        body {
+          background-color: #708aa8;
+          background-repeat: no-repeat;
+          background-size:cover;
+          width: 30%px;
+          word-wrap: break-word;
+        }
+        table, th, td {
+          border: 2px solid black;
+          table-layout: fixed;
+          width: 55px;
+          height: 55px;
+          margin-left: auto;
+          margin-right: auto;
+          /*margin-top: 15%;*/
+          margin-bottom: auto;
+          text-align:center
+        }
+        h1{
+          text-align:center
+        }
+        table{
+          background-color: #FFFFFF;
+          border:4px solid black;
+        }
+        .floatRight {
+          float: right;
+        }
+        .invisible {
+          color:white;
+        }
+        .vertical-center{
+          display:flex;
+          justify-content:center;
+          align-items:center;
+        }
+        .floatRight {
+          float: right;
+        }
+        .blank {
+          background-color:  #000000;
+        }
+        #notes {
+          /*right:0;*/
+          border:2px solid black;
+          position: absolute;
+          background-image: url(../images/noteswindow.png);
+          z-index:2;
+          visibility: hidden;
+        }
+        #notesHeading {
+          cursor: move;
+          z-index:4;
+        }
+        #textarea{
+          position: relative;
+          background-color: #ede6df;
+          margin: 10px 10px 10px 10px; height: 90%;
+          z-index:3;
+        }
+        #para{
+          background-color:white;
+          margin: 50px 30px 50px 30px;
+          padding: 50px 30px 50px 30px;
+          border-radius:0.1%;
+          border-color:black;
+        }
+        #win{
+          display: none;
+        }
+        .button{
+          /*background-color: #04AA6D;*/
+          /*border: none;*/
+          /*color: white;*/
+          padding: 20px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 18px;
+          border-radius: 12px;
+          margin: 16px 8px;
+        }
+        .poem{
+
+        }
+
+
+
+        #blockquote {
+          border-radius: 25px;
+          border:2px solid black;
+          position: absolute;
+          visibility: hidden;
+
+          width: 250px;
+          height: 250px;
+          top: 10;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+
+          padding: 2em 8em;
+          font: 1em/150% sans-serif;
+          background-color: lightgoldenrodyellow;
+        }
+
+        #blockquote::before,
+        #blockquote::after {
+          position: absolute;
+          height: 3rem;
+          font: 6rem/100% Georgia, "Times New Roman", Times, serif;
+        }
+
+        #blockquote::before {
+          content: "“";
+          top: 0.3rem;
+          left: 0.9rem;
+        }
+
+        #blockquote::after {
+          content: "”";
+          bottom: 0.3rem;
+          right: 0.8rem;
+        }
+
+        #rcorners1 {
+          display: inline-block;
+          background-color: #FFFFFF;
+          border-radius: 25px;
+          border: 4px solid #000000;
+          padding: 20px; 
+          width: 120px;
+          height: 100px;
+          margin: 45px 45px 45px 45px;
+        }
+        #rcorners2 {
+          visibility: hidden;
+          display: inline-block;
+          float: right;
+          background-color: #FFFFFF;
+          border-radius: 25px;
+          border: 4px solid #000000;
+          padding: 20px; 
+          width: 120px;
+          height: 100px;
+          margin: 45px 45px 45px 45px;
+        }
+
+
+
+
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <img src="../images/back.png" alt="back a page" width="10%" height="10%" onclick="document.location='home'" style = "margin-left: auto;, margin-right: 100%;">
+
+    <div id="notes">
+        <p id="notesHeading">Notes</p>
+        <img src="../images/x.png" class = "floatRight" alt="x icon" width="30" height="20" onclick="closeNotes()">
+        <img src="../images/resize.png" class = "floatRight" alt="resize icon" width="30" height="20" onclick="minimize()">
+        <br>
+        <textarea  id="textarea" name="notes" cols="40" rows="10"></textarea>
+        <br>
+        <input id="save" type="submit" value="Save" class="floatRight" onclick="saveNotes()">
+      </div>
+
+      <img src="../images/help.png" class="floatRight" alt="help icon" width="50" height="50" onclick="help()">
+      <img src="../images/notepad.png" class="floatRight" alt="notepad icon" width="50" height="50" onclick="openNotes()">
+      <br>
+
+      <div class="floatRight">
+        <img id="heart1" src="../images/heart.png" alt="mistakes" width="40" height="40" style="visibility:visible;">
+        <img id="heart2" src="../images/heart.png" alt="mistakes" width="40" height="40" style="visibility:visible;">
+        </div>
+
+      <h1 id="number">Value is </h1>
+
+
+      <img id="rcorners2" src="../images/x.png" alt="x icon" width="50" height="50" onclick="closeHints()">
+
+
+       <table id="crossword"> <!--at the moment a 10x11 table -->
+      <tr>
+        <td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td> </td>
+      </tr>
+      <tr>
+        <td class = "blank"> </td><td class = "blank"> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td>
+      </tr>
+      <tr>
+        <td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td> </td>
+      </tr>
+      <tr>
+        <td > </td><td > </td><td > </td><td> </td><td > </td><td > </td><td > </td><td> </td><td > </td><td class = "blank"> </td><td> </td>
+      </tr>
+      <tr>
+        <td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td> </td>
+      </tr>
+      <tr>
+        <td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td>
+      </tr>
+      <tr>
+        <td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td>
+      </tr>
+      <tr>
+        <td class = "blank"> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td class = "blank"> </td><td class = "blank"> </td class = "blank"><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td>
+      </tr>
+      <tr>
+        <td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td>
+      </tr>
+      <tr>
+        <td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td><td class = "blank"> </td>
+      </tr>
+    </table>
+
+    <input class = "button" id="submit" type="button" value = "Submit"/>
+
+
+      <div>
+        <p  id="rcorners1" name="rcorners1" cols="40" rows="10" onclick="hints(1)" >Hint 1: column 4</p>
+        <p  id="rcorners1" name="rcorners2" cols="40" rows="10" onclick="hints(2)">Hint 2: column 11</p>
+        <p  id="rcorners1" name="rcorners3" cols="40" rows="10" onclick="hints(3)">Hint 3: row 2</p>
+      </div>
+      <div>
+        <p  id="rcorners1" name="rcorners4" cols="40" rows="10" onclick="hints(4)">Hint 4: row 4</p>
+        <p  id="rcorners1" name="rcorners5" cols="40" rows="10" onclick="hints(5)">Hint 5: row 8</p>
+      </div>
+
+        <!-- <img src="../images/x.png" class = "floatRight" alt="x icon" width="100" height="100" onclick="closeHints()"> -->
+
+        <div id="blockquote"></div>
+
+
+      <table id="win"> 
+    <tr><td> </td><td> </td><td> </td><td>w</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td>k</td></tr>
+    <tr><td> </td><td> </td><td>c</td><td>o</td><td>l</td><td>e</td><td>r</td><td>i</td><td>d</td><td>g</td><td>e</td></tr>
+    <tr><td> </td><td> </td><td> </td><td>r</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td>a</td></tr>
+    <tr><td>l</td><td>o</td><td>r</td><td>d</td><td>b</td><td>y</td><td>r</td><td>o</td><td>n</td><td> </td><td>t</td></tr>
+    <tr><td> </td><td> </td><td> </td><td>s</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td>s</td></tr>
+    <tr><td> </td><td> </td><td> </td><td>w</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+    <tr><td> </td><td> </td><td> </td><td>o</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+    <tr><td> </td><td>b</td><td>u</td><td>r</td><td>n</td><td>s</td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+    <tr><td> </td><td> </td><td> </td><td>t</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+    <tr><td> </td><td> </td><td> </td><td>h</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
+    </table>
+
+      
+      
+      <script src="../js/help.js"></script>
+      <script src="../js/docs.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+

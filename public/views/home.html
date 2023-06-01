@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wendy's Desk Top</title>
+    <meta charset="utf-8"/>
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <style type="text/css">
+      span {
+          font-style: italic;
+      }
+      body {
+        background-image: url(../images/laptopBackground.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      .floatRight {
+        float: right;
+      }
+      #notes {
+        /*right:0;*/
+        border:2px solid black;
+        position: absolute;
+        background-image: url(../images/noteswindow.png);
+        z-index:2;
+        visibility: hidden;
+      }
+      #notesHeading {
+        cursor: move;
+        z-index:4;
+      }
+      #textarea{
+        position: relative;
+        background-color: #ede6df;
+        margin: 10px 10px 10px 10px; height: 90%;
+        z-index:3;
+      }
+      p{
+        font-family: 'Roboto Slab', serif;
+      }
+      #movedown{
+        padding-top: 50px;
+      }
+      #settings {
+        border:2px solid black;
+        position: absolute;
+        right: 0;
+        top: 4em;
+        background-color: whitesmoke;
+        z-index:3;
+        visibility: hidden;
+      }
+      #timer {
+        border:2px solid black;
+        position: absolute;
+        right: 6em;
+        top: 4em;
+        background-color: whitesmoke;
+        z-index:4;
+        visibility: hidden;
+      }
+      #help {
+        border:2px solid black;
+        position: absolute;
+        right: 0;
+        top: 4em;
+        background-color: whitesmoke;
+        z-index:3;
+        visibility: hidden;
+      }
+      #pauseScreen
+      {
+        position:fixed;
+        padding:0;
+        margin:0;
+
+        top:0;
+        left:0;
+        z-index:5;
+        width: 100%;
+        height: 100%;
+        background:rgba(0,0,0,0.5);
+        /* visibility: hidden; */
+      }
+      .white{
+        color:white;
+      }
+      
+
+  </style>
+
+      <div id = "pauseScreen">
+        <p class = "white">Continue the Game?</p>
+        <!-- <p>Timer: </p><p id="countDown"></p> -->
+        <input id="playButton" type="button" value="Play" />
+        <input id="logout" type="button" value="Logout" />
+      </div>
+      <div id="notes">
+        <p id="notesHeading">Notes</p>
+        <img src="../images/x.png" class = "floatRight" alt="x icon" width="30" height="20" onclick="closeNotes()">
+        <img src="../images/resize.png" class = "floatRight" alt="resize icon" width="30" height="20" onclick="minimize()">
+        <br>
+        <textarea  id="textarea" name="notes" maxlength = "200" cols="40" rows="10"></textarea>
+        <br>
+        <input id="save" type="submit" value="Save" class="floatRight" >
+      </div>
+
+      <div id="help" class = "floatRight">
+        <!-- <p id="helpHeading">Settings</p> -->
+        <p id="hint">Take a look around Wendy's computer!</p>
+        <br>
+      </div>
+
+      <div id="settings" class = "floatRight">
+        <p id="settingsHeading">Settings</p>
+        <p id="username">User:</p>
+        <input id="logout2" type="button" value="Logout" />
+        <br>
+      </div>
+
+      <div id="timer" class = "floatRight">
+        <!-- <p id="timerHeading">Settings</p> -->
+        
+          <p>Timer: </p><p id="countDown"></p>
+          <input id="pauseButton" type="button" value="Pause" />
+          
+     
+      </div>
+
+      <img src="../images/mail.png" alt="mail icon" width="100" height="100" onclick="document.location='mail'">
+      <img src="../images/expresso.png" alt="expresso icon" width="100" height="100" onclick="document.location='social'">
+
+      <img src="../images/settings.png" class="floatRight " alt="settings icon" width="50" height="50" onclick="openSettings()">
+      <img src="../images/help.png" class="floatRight" alt="help icon" width="50" height="50" onclick="help()">
+      <img src="../images/timer.png" class="floatRight" alt="timer icon" width="50" height="50" onclick="openTimer()">
+      <img src="../images/notepad.png" class="floatRight" alt="notepad icon" width="50" height="50" onclick="openNotes()">
+
+      
+      
+      
+      <div></div>
+
+      <img src="../images/playhub.png" alt="playhub icon" width="100" height="100" onclick="document.location='game'">
+      <img src="../images/phone.png" alt="phone icon" width="100" height="100" onclick="document.location='call'">
+      <div></div>
+      <img src="../images/photos.png" alt="photos icon" width="100" height="100" onclick="document.location='photos'">
+      
+      <div></div>
+      <!-- <img src="../images/tracker.png" alt="tracker icon" width="100" height="100" >
+      <div></div> -->
+      <img src="../images/cowdy.png" alt="cowdy icon" width="100" height="100" onclick="document.location='browser'">
+      <div></div>
+      <img src="../images/docs.png" alt="docs icon" width="100" height="100" onclick="document.location='docs'"> 
+
+      <script src="/js/home.js"></script>
+      <script src="/js/help.js"></script>
+      <script src="/js/session.js"></script>
+
+
+  </body>
+</html>
+

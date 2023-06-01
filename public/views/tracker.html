@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EXPOS</title>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  </head>
+
+  
+
+  <body>
+    <style type="text/css">
+        span {
+            font-style: italic;
+        }
+        body {
+          background-image: url(../images/browser.jpg);
+          background-repeat: no-repeat;
+          background-size:cover;
+        }
+         .floatRight {
+          float: right;
+        }
+        #notes {
+          /*right:0;*/
+          border:2px solid black;
+          position: absolute;
+          background-image: url(../images/noteswindow.png);
+          z-index:2;
+          visibility: hidden;
+        }
+        #notesHeading {
+          cursor: move;
+          z-index:4;
+        }
+        #textarea{
+          position: relative;
+          background-color: #ede6df;
+          margin: 10px 10px 10px 10px; height: 90%;
+          z-index:3;
+        }
+
+    </style>
+
+      <div id="notes">
+        <p id="notesHeading">Notes</p>
+        <img src="../images/x.png" class = "floatRight" alt="x icon" width="30" height="20" onclick="closeNotes()">
+        <img src="../images/resize.png" class = "floatRight" alt="resize icon" width="30" height="20" onclick="minimize()">
+        <br>
+        <textarea  id="textarea" name="notes" cols="40" rows="10"></textarea>
+        <br>
+        <input id="save" type="submit" value="Save" class="floatRight" onclick="saveNotes()">
+      </div>
+
+      <img src="../images/help.png" class="floatRight" alt="help icon" width="50" height="50" onclick="help()">
+      <img src="../images/notepad.png" class="floatRight" alt="notepad icon" width="50" height="50" onclick="openNotes()">
+      <br>
+      
+      <script src="../js/help.js"></script>
+
+  </body>
+</html>
+
+
+
+

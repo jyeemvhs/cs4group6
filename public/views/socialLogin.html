@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login to Expresso</title>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  </head>
+
+  
+
+  <body>
+    <style type="text/css">
+        span {
+            font-style: italic;
+        }
+        body {
+          background-repeat: no-repeat;
+          background-size:cover;
+          background-color:#ede6df;
+        }
+        .vertical-center{
+          display:flex;
+          justify-content:center;
+        }
+         input[type="text"] {
+             display: block;
+             margin : 0 auto;
+        }
+        button{
+          display: block;
+             margin : 0 auto;
+        }
+        .img-center{
+          display:flex;
+          justify-content:center;
+          margin-left:12%;
+        }
+        .floatRight {
+          float: right;
+        }
+        #notes {
+          /*right:0;*/
+          border:2px solid black;
+          position: absolute;
+          background-image: url(../images/noteswindow.png);
+          z-index:2;
+          visibility: hidden;
+        }
+        #notesHeading {
+          cursor: move;
+          z-index:4;
+        }
+        #textarea{
+          position: relative;
+          background-color: #ede6df;
+          margin: 10px 10px 10px 10px; height: 90%;
+          z-index:3;
+        }
+
+    </style>
+
+
+      <img src="../images/back.png" alt="back a page" width="10%" height="10%" onclick="document.location='social.html'" style = "margin-left: auto; margin-right: 100%;">
+
+      <div id="notes">
+        <p id="notesHeading">Notes</p>
+        <img src="../images/x.png" class = "floatRight" alt="x icon" width="30" height="20" onclick="closeNotes()">
+        <img src="../images/resize.png" class = "floatRight" alt="resize icon" width="30" height="20" onclick="minimize()">
+        <br>
+        <textarea  id="textarea" name="notes" cols="40" rows="10"></textarea>
+        <br>
+        <input id="save" type="submit" value="Save" class="floatRight" onclick="saveNotes()">
+      </div>
+      <img src="../images/help.png" class="floatRight" alt="help icon" width="50" height="50" onclick="help()">
+      <img src="../images/notepad.png" class="floatRight" alt="notepad icon" width="50" height="50" onclick="openNotes()">
+
+      <img class="img-center"src="../images/expressoLoginScreen.png"  width="80%" height = "80%" alt="browser logo">
+      <p class="vertical-center">Username or Email</p>
+      <br>
+       <input type="text" value="wendy013@jimail.com" class="vertical-center" readonly>
+       <br>
+       <p class="vertical-center">Password</p>
+       <br>
+       <input id="password" type="text" class="vertical-center" value="">
+
+      <br>
+      <br>
+      <button  class="vertical-center" onclick="login()">Login</button>
+      
+      <script src="../js/socialLogin.js"></script>
+      <script src="/js/help.js"></script>
+
+  </body>
+</html>
+
+
+
+
+

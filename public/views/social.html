@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Expresso</title>
+    <!-- <link rel="icon" type="image/png" hrf="../images/expresso.png"> -->
+    <meta charset="utf-8"/>
+    <style type="text/css">
+
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  </head>
+
+  
+
+  <body>
+    <style type="text/css">
+        span {
+            font-style: italic;
+        }
+        body {
+          background-color: AntiqueWhite;
+        }
+        h1 {
+          font-size: 40px;
+          font-family: Garamond;
+          color: #434343;
+        }
+        h4{
+          font-family: Garamond;
+          color:#434343;
+          margin-left:5%;
+        }
+        p{
+          font-family: Garamond;
+          color:#434343;
+          font-weight:20;
+        }
+        div {
+          float:left;
+        }
+        .block {
+          display: block;
+          margin-right: auto;
+          margin-left: auto;
+          width: 50%;
+          background-color: BurlyWood;
+        }
+        .scroll {
+          width: 400px;
+          height: 600px;
+          overflow: scroll;
+          background-color: white;
+        }
+        .center {
+          display: block;
+          margin-right: auto;
+          margin-left: auto;
+          width: 90%;
+        }
+         .floatRight {
+          float: right;
+        }
+        #notes {
+          /*right:0;*/
+          border:2px solid black;
+          position: absolute;
+          background-image: url(../images/noteswindow.png);
+          z-index:2;
+          visibility: hidden;
+        }
+        #notesHeading {
+          cursor: move;
+          z-index:4;
+        }
+        #textarea{
+          position: relative;
+          background-color: #ede6df;
+          margin: 10px 10px 10px 10px; height: 90%;
+          z-index:3;
+        }
+        .vertical-center{
+          display:flex;
+          justify-content:center;
+          align-items:center;
+        }
+        fieldset{
+          border-radius:5%;
+          border-color:#434343;
+        }
+    </style>
+      <img src="../images/back.png" alt="back a page" width="10%" height="10%" onclick="document.location='home'" style = "margin-left: auto; margin-right: 100%;">
+      
+      <div id="notes">
+        <p id="notesHeading">Notes</p>
+        <img src="../images/x.png" class = "floatRight" alt="x icon" width="30" height="20" onclick="closeNotes()">
+        <img src="../images/resize.png" class = "floatRight" alt="resize icon" width="30" height="20" onclick="minimize()">
+        <br>
+        <textarea  id="textarea" name="notes" cols="40" rows="10"></textarea>
+        <br>
+        <input id="save" type="submit" value="Save" class="floatRight" onclick="saveNotes()">
+      </div>
+
+      <img src="../images/help.png" class="floatRight" alt="help icon" width="50" height="50" onclick="help()">
+      <img src="../images/notepad.png" class="floatRight" alt="notepad icon" width="50" height="50" onclick="openNotes()">
+      <img src="../images/profile.png" class="floatRight" alt="profile icon" width="50" height="50" onclick="document.location='/socialLogin'">
+      <br>
+
+      <!-- <button onclick="document.location='/login.html'">Login</button> -->
+
+      <!-- <img class="block" src="../images/socialTitle.png" alt="expresso title" width="600" height="180"> -->
+
+      <h1>What's New?</h1>
+
+      <img src="../images/stories.png" class="vertical-center" alt="stories icon" width="40%" height="40%">
+      <div class="scroll">
+        <br>
+        <br>
+        <fieldset>
+        <h4>shhs_parsclub</h4>
+        <img class="center" src="../images/post1.jpg" alt="ohno" width="300" height="300">
+        <p>beach day with PARS club! Drew faces in the sand. If that's not art, then what is?</p>
+      </fieldset> 
+        <br>
+        <br>
+        <fieldset>
+        <h4>av.vel</h4>
+        <img  src="../images/post2.jpg" alt="ohno" width="300" height="300">
+        <p>this morning 🍓</p>
+        </fieldset> 
+        <br>
+        <br>
+        <fieldset>
+        <h4>shhs.asb</h4>
+        <img class="center" src="../images/post3.jpg" alt="ohno" width="300" height="300">
+        <p>spring's come and gone to Seneca Hills</p>
+        </fieldset> 
+        <br>
+        <br>
+        <fieldset>
+        <h4>unlimitedcats</h4>
+        <img class="center" src="../images/post4.jpg" alt="ohno" width="300" height="300">
+        <p>follow for more cats!! </p>
+        <br>
+        <br>
+         
+      </div>
+
+      <script src="../js/help.js"></script>
+      <script src="js/session.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
